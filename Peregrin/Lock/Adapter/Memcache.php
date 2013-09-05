@@ -1,7 +1,7 @@
 <?php
 /*
   +------------------------------------------------------------------------+
-  | Phalcon Framework                                                      |
+  | Peregrin Framework                                                      |
   +------------------------------------------------------------------------+
   | Copyright (c) 2011-2012 Phalcon Team (http://www.phalconphp.com)       |
   +------------------------------------------------------------------------+
@@ -17,13 +17,13 @@
   +------------------------------------------------------------------------+
 */
 
-namespace Phalcon\Lock\Adapter {
+namespace Peregrin\Lock\Adapter {
     use Phalcon\Cache\Backend\Memcache as CacheBackend;
     use Phalcon\Cache\Frontend\Data as CacheFrontend;
-    use Phalcon\Lock\Adapter\Base;
-    use Phalcon\Lock\Exception;
+    use Peregrin\Lock\Adapter\Base;
+    use Peregrin\Lock\Exception;
 
-    class Memcache extends \Phalcon\Lock\Adapter\Base
+    class Memcache extends \Peregrin\Lock\Adapter\Base
     {
         private $cacheBackend = null;
 

@@ -1,7 +1,7 @@
 <?php
 /*
   +------------------------------------------------------------------------+
-  | Phalcon Framework                                                      |
+  | Peregrin Framework                                                      |
   +------------------------------------------------------------------------+
   | Copyright (c) 2011-2012 Phalcon Team (http://www.phalconphp.com)       |
   +------------------------------------------------------------------------+
@@ -17,7 +17,7 @@
   +------------------------------------------------------------------------+
 */
 
-namespace Phalcon {
+namespace Peregrin {
 
     class Lock
     {
@@ -37,7 +37,7 @@ namespace Phalcon {
             if (!isset($options['adapter'])) {
                 $options['adapter'] = 'file';
             }
-            $adapter = '\\Phalcon\\Lock\\Adapter\\' . ucfirst($options['adapter']);
+            $adapter = '\\Peregrin\\Lock\\Adapter\\' . ucfirst($options['adapter']);
             $this->_backend = new $adapter( $options);
         }
 
@@ -45,7 +45,7 @@ namespace Phalcon {
          * @param int $wait
          *
          * @return bool
-         * @throws Phalcon\Lock\Exception
+         * @throws Peregrin\Lock\Exception
          */
         public function lock($wait = 0)
         {
@@ -55,7 +55,7 @@ namespace Phalcon {
                     usleep(50000);
                 }
                 if ($this->isLocked()) {
-                    throw new \Phalcon\Lock\Exception('Resource busy');
+                    throw new \Peregrin\Lock\Exception('Resource busy');
                 }
             }
 
